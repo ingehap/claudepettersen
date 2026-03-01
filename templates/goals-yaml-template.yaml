@@ -1,0 +1,80 @@
+# Goals & Objectives Template (OKR Format)
+# Save to: ~/.claude-assistant/config/goals.yaml
+#
+# Used by: /checkin (goal alignment, stalled-goal detection, writing hours)
+#          /morning-brief (goal alignment, research nudges)
+#          /goals-review (progress tracking, evidence gathering)
+#
+# MIGRATION NOTE: This template uses weighted OKR format with progress scores.
+# If upgrading from the simpler flat format (goals.professional, goals.system, etc.),
+# restructure your goals into weighted objectives with measurable key results.
+
+meta:
+  quarter: "Q1-2026"           # Current planning quarter
+  push_level: moderate         # How aggressively Claude nudges about priorities:
+                               #   gentle   — show priorities, no nudging
+                               #   moderate — surface at-risk goals, suggest focus blocks
+                               #   assertive — flag calendar misalignment, challenge time allocation
+  next_review: "2026-03-15"    # When to run /goals-review next
+
+objectives:
+  # --- Example Objective 1 ---
+  - id: research-output
+    name: "Research Output"
+    weight: 0.30               # Weights across all objectives should sum to 1.0
+    status: active             # active | paused | dormant
+    key_results:
+      - id: paper-submissions
+        description: "Submit 2 papers to journals this quarter"
+        progress: 0.0          # 0.0 (not started) to 1.0 (complete)
+        at_risk: false         # Set true when behind expected pace
+        notes: ""
+
+      - id: writing-hours
+        description: "Average 6+ hours/week of dedicated writing time"
+        progress: 0.0
+        at_risk: false
+        notes: ""
+        # /checkin uses this key_result for writing-hours tracking.
+        # It looks for free blocks >= 45 min and compares to 1.0 hr/day target.
+
+  # --- Example Objective 2 ---
+  - id: grant-management
+    name: "Grant Management"
+    weight: 0.25
+    status: active
+    key_results:
+      - id: proposal-pipeline
+        description: "Submit 3 grant proposals"
+        progress: 0.0
+        at_risk: false
+        notes: ""
+
+      - id: report-deadlines
+        description: "All progress reports submitted on time"
+        progress: 0.0
+        at_risk: false
+        notes: ""
+
+  # Add more objectives as needed. Common categories:
+  # - Team Effectiveness (RA management, delegation, onboarding)
+  # - Teaching & Advising (courses, student supervision)
+  # - System Building (AI tools, workflows, automation)
+  #
+  # Tips:
+  # - 3-5 objectives is a good range. More becomes hard to track.
+  # - Weights should reflect actual priority, not aspiration.
+  # - Set status: dormant for objectives not active this quarter.
+  # - Mark at_risk: true when a key_result falls behind expected pace.
+
+upcoming_deadlines:
+  - date: "2026-03-15"
+    description: "Example: Grant report due to Foundation X"
+    objective: grant-management
+
+  - date: "2026-03-31"
+    description: "Example: Paper revision due to Journal Y"
+    objective: research-output
+
+  # Add your real deadlines here. /goals-review surfaces these
+  # in the dashboard view and /checkin references them for priorities.

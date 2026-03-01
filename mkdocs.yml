@@ -1,0 +1,162 @@
+site_name: Claude Blattman · AI for Researchers & Managers
+site_url: https://claudeblattman.com
+site_description: A project manager's guide to building AI workflows — from chatbots to self-improving systems
+site_author: Chris Blattman
+repo_url: https://github.com/chrisblattman/claudeblattman
+repo_name: chrisblattman/claudeblattman
+
+edit_uri: ""
+
+extra_css:
+  - stylesheets/extra.css
+
+theme:
+  name: material
+  custom_dir: overrides
+  palette:
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: blue grey
+      accent: teal
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: blue grey
+      accent: teal
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+  font:
+    text: DM Sans
+    code: JetBrains Mono
+  features:
+    - navigation.tabs
+    - navigation.tabs.sticky
+    - navigation.instant
+    - navigation.instant.prefetch
+    - navigation.indexes
+    - navigation.top
+    - navigation.footer
+    - navigation.sections
+    - navigation.path
+    - search.suggest
+    - search.highlight
+    - content.code.copy
+    - content.code.annotate
+    - toc.follow
+  icon:
+    repo: fontawesome/brands/github
+
+nav:
+  - Home: index.md
+  - Quickstart: quickstart.md
+  - Essentials:
+    - essentials/index.md
+    - Chatbots Done Right: essentials/chatbots.md
+    - Prompt Engineering: essentials/prompting.md
+    - AI Project Folders: essentials/project-folders.md
+    - "Example: Vacation Planning": essentials/folders/vacation.md
+    - "Example: Shopping Decisions": essentials/folders/shopping.md
+    - "Example: Health & Fitness": essentials/folders/health.md
+    - Wispr Flow: essentials/wispr-flow.md
+    - Granola: essentials/granola.md
+    - NotebookLM: essentials/notebooklm.md
+    - "ChatGPT vs Claude": essentials/chatgpt-vs-claude.md
+    - The Cost Reality: essentials/cost.md
+  - Setup:
+    - setup/index.md
+    - Install (Mac): toolkit/install-mac.md
+    - Install (Windows): toolkit/install-windows.md
+    - Set Up VS Code: setup/vscode-setup.md
+    - Your CLAUDE.md: toolkit/claude-md.md
+    - How Claude Code Thinks: setup/modes.md
+    - MCP Setup: toolkit/mcp-setup.md
+    - How Skills Work: toolkit/skills-guide.md
+    - Skill Library: setup/skill-reference.md
+  - Workflows:
+    - workflows/index.md
+    - "Prompt, Plan, Review, Revise": workflows/first-session-skills.md
+    - Executive Assistant: toolkit/executive-assistant.md
+    - Project Management: workflows/project-management.md
+    - "Example: Project Dashboard": workflows/examples/project-overview-example.md
+    - "Example: Research Design": workflows/examples/research-design-example.md
+  - "Tax Workflow":
+    - tax-workflow/index.md
+    - Privacy & Setup: tax-workflow/before-you-start/privacy-and-setup.md
+    - Workflow Overview: tax-workflow/case-study/the-workflow-overview.md
+    - Document Collection: tax-workflow/case-study/document-collection.md
+    - Compilation & Review: tax-workflow/case-study/compilation-and-review.md
+    - What AI Got Wrong: tax-workflow/case-study/what-ai-got-wrong.md
+    - Architecture Patterns: tax-workflow/build-your-own/architecture-patterns.md
+    - Starter Templates: tax-workflow/build-your-own/starter-templates.md
+    - Academic Tax Basics: tax-workflow/reference/academic-tax-basics.md
+    - When to Get Help: tax-workflow/reference/when-to-get-help.md
+  - Advanced:
+    - system/index.md
+    - Building Skills: system/building-skills.md
+    - Agents vs Skills: system/agents-vs-skills.md
+    - Continuous Improvement: system/continuous-improvement.md
+    - Patterns: system/patterns.md
+    - Downloads & Reference Library: downloads/index.md
+    - "A Real CLAUDE.md": downloads/real-claude-md-example.md
+  - About:
+    - about.md
+    - Resources: resources.md
+    - Privacy: privacy.md
+
+markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - attr_list
+  - md_in_html
+  - toc:
+      permalink: true
+  - tables
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+
+plugins:
+  - search
+  - meta
+  - social:
+      cards_layout_options:
+        background_color: "#263238"
+        color: "#80cbc4"
+
+extra:
+  analytics:
+    feedback:
+      title: Was this page helpful?
+      ratings:
+        - icon: material/thumb-up
+          name: Yes, it helped
+          data: 1
+          note: Thanks for your feedback!
+        - icon: material/thumb-down
+          name: It could be improved
+          data: 0
+          note: >-
+            Thanks for your feedback. You can also
+            <a href="mailto:claudeblattman+feedback@gmail.com">email us directly</a>.
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/chrisblattman/claudeblattman
+    - icon: fontawesome/brands/x-twitter
+      link: https://twitter.com/cblatts
+
+copyright: >
+  Built by <a href="https://chrisblattman.com">Chris Blattman</a> &mdash;
+  shared freely under MIT License
